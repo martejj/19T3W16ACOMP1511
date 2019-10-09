@@ -247,7 +247,7 @@ For example:
 
 ## What is CS Paint?
 
-
+1511 canvas solution
 
 ## How does CS Paint store a canvas and how can you access a single pixel?
 
