@@ -4,7 +4,6 @@
 
 * Ass1 is done and dusted for most of you - any questions about how it'll be marked?
 * This week we'll cover pointers, structs and indirectly more strings and arrays.
-* Does anyone want to volunteer for code review for `frequency_analysis.c`
 
 ## Tutorial Question 4 - What is a pointer? How do pointers relate to other variables?
 
