@@ -7,13 +7,14 @@ struct node {
 	struct node *next;		// pointer to the next node
 };
 
-// ==== W10 Tut Problems ====
 // returns a copy of the linked list
 struct node *copy(struct node *head);
+
 // returns 1 if the two lists are identical, otherwise returns 0
 int identical(struct node *head1, struct node *head2);
 // returns 1 if list is in strictly increasing order, otherwise returns 0
 int ordered(struct node *head);
+
 // given two lists in strictly increasing order,
 // return a new linked list (in strictly increasing order) of the elements in both set1 and set2
 struct node *set_intersection(struct node *set1, struct node *set2);

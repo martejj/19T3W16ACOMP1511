@@ -4,17 +4,55 @@
 #include <assert.h>
 #include "list.h"
 
-// ======= W10 Tut Problems ========
+#define FALSE   0
+#define TRUE    1
+
 // returns a copy of the linked list
-struct node *copy(struct node *head) {
+struct node *copy(struct node *head_old) {
     
-    return headCopy;
+    if (head_old == NULL) {
+        return NULL;
+    }
+    
+    struct node *head_copy = create_node(head_old->data);
+    struct node *curr_copy = head_copy;
+    
+    struct node *curr_old = head_old;
+    curr_old = curr_old->next;
+    
+    while (curr_old != NULL) {
+        
+        struct node *copy_node = create_node(curr_old->data);
+        
+        curr_copy->next = copy_node;
+        
+        curr_copy = curr_copy->next;
+        
+        curr_old = curr_old->next;
+        
+    }
+    
+    return head_copy;
 }
 
 // returns 1 if the two lists are identical, otherwise returns 0
 int identical(struct node *head1, struct node *head2) {
-    // replace this!
-    return 0;
+    
+    struct node *curr1 = head1;
+    struct node *curr2 = head2;
+    
+    while (curr1 != NULL && curr2 != NULL) {
+        
+        if (curr1->data != curr2->data) {
+            return FALSE;
+        }
+        
+        curr1 = curr1->next;
+        curr2 = curr2->next;
+        
+    }
+    
+    return TRUE;
 }
 
 // returns 1 if list is in strictly increasing order, otherwise returns 0
@@ -77,9 +115,14 @@ struct node *create_list(int values[], int size) {
 
 // creates a struct node with the given data value
 // returns a pointer to this node
-struct node *create_node(int dat) {
-    // Do this
-    return NULL;
+struct node *create_node(int data) {
+
+    struct node *new_node = malloc(sizeof(struct size));
+    
+    new_node->data = data;
+    new_node->next = NULL;
+    
+    return new_node;
 }
 
 // prints out the list given the head of a list
